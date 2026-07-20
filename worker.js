@@ -20,8 +20,8 @@
  * OPENAI_MODEL   – opcjonalnie, np. gpt-4.1-mini
  */
 
-const APP_NAME = "Security Engine AI";
-const APP_VERSION = "5.0.0-sprint1";
+const APP_NAME = "TW Security Engine";
+const APP_VERSION = "5.1.0";
 
 const MAX_TEXT_LENGTH = 30_000;
 const MAX_IMAGE_BYTES = 8 * 1024 * 1024;
@@ -175,7 +175,7 @@ function handleGet(path, corsHeaders) {
       status: "ok",
       name: APP_NAME,
       version: APP_VERSION,
-      message: "Backend Security Engine AI v5 działa.",
+      message: "Backend TW Security Engine działa poprawnie.",
       endpoints: [
         "POST /",
         "POST /api/analyze",
@@ -692,7 +692,7 @@ function parseModelJson(rawOutput) {
 
 function buildTextPrompt(text, analysisType) {
   return `
-Jesteś silnikiem bezpieczeństwa Security Engine AI.
+Jesteś silnikiem bezpieczeństwa TW Security Engine.
 
 Przeanalizuj przekazaną treść pod kątem:
 - oszustwa,
@@ -767,7 +767,7 @@ ${text}
 
 function buildImagePrompt(additionalContext) {
   return `
-Jesteś silnikiem bezpieczeństwa Security Engine AI.
+Jesteś silnikiem bezpieczeństwa TW Security Engine.
 
 Obraz może zawierać:
 - ofertę pracy,
@@ -1228,7 +1228,7 @@ function normalizeReport(report, analysisType) {
 
     analysisType,
     disclaimer:
-      "Security Engine AI wskazuje sygnały ryzyka i elementy wymagające weryfikacji. Wynik nie jest gwarancją bezpieczeństwa ani ostatecznym stwierdzeniem oszustwa.",
+      "TW Security Engine wspiera proces weryfikacji informacji. Wynik analizy jest wskazówką i nie zastępuje samodzielnej oceny. Ostateczna decyzja zawsze należy do użytkownika.",
     version: APP_VERSION
   };
 }
